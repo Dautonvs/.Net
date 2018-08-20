@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+
+@model _03.Fiap.Web.MVC.Models.Multa
+
+
+@if (Model != null)
+{
+    @ViewBag.churros
+    @TempData["msg"]
+    
+<ul>
+    <li>@Model.Data</li>
+    <li>@Model.Endereco</li>
+    <li>@Model.Nivel</li>
+    <li>@Model.Placa</li>
+    <li>@Model.Notificado</li>
+    <li>@Model.Valor</li>
+</ul>
+}
+
+<form action="/Multa/Cadastrar" method="post">
+    <div class="form-group">
+        <label for="id-nivel">Nível</label>
+        <select class="form-control" name="nivel" id="id-nivel">
+            <option>Leve</option>
+            <option>Média</option>
+            <option>Grave</option>
+            <option>Gravíssima</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="id-data">Data</label>
+        <input type="text" name="data" id="id-data" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="id-end">Endereço</label>
+        <input type="text" name="end" id="id-end" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="checkbox" name="notificado" id="id-not" />
+        <label for="id-not">Notificado</label>
+    </div>
+    <div class="form-group">
+        <label for="id-valor">Valor</label>
+        <input type="text" name="valor" id="id-valor" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="id-placa">Placa</label>
+        <input type="text" name="placa" id="id-placa" class="form-control" />
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+</form>
+
